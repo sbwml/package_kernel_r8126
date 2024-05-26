@@ -1,6 +1,6 @@
 #
 # Download realtek r8126 linux driver from official site:
-# [https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software]
+# [https://www.realtek.com/Download/List?cate_id=584]
 #
 
 include $(TOPDIR)/rules.mk
@@ -17,7 +17,6 @@ include $(INCLUDE_DIR)/package.mk
 define KernelPackage/r8126
   TITLE:=Driver for Realtek r8126 chipsets
   SUBMENU:=Network Devices
-  VERSION:=$(LINUX_VERSION)+$(PKG_VERSION)-$(BOARD)-$(PKG_RELEASE)
   DEPENDS:=@PCI_SUPPORT
   FILES:= $(PKG_BUILD_DIR)/r8126.ko
   AUTOLOAD:=$(call AutoProbe,r8126)
